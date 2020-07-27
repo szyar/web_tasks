@@ -1,14 +1,14 @@
 require 'cgi'
 cgi = CGI.new
-# データを受け取った後、HTMLの形式でレスポンスを返す
-cgi.out("type" => "text/html", "charset" => "UTF-8") {
-  # 情報の目印とした"goya"のデータを cgi['goya']と言う記述で取り出し、ローカル変数に代入する
+# Receive response in HTML format after receiving data
+cgi.out('type' => 'text/html', 'charset' => 'UTF-8') do
+  # Take out the "goya" data used as the information mark with the description cgi['goya'] and assign it to a local variable.
   get = cgi['goya']
-  # HTMLでレスポンスを返却する
+  # Return the response with HTML
   "<html>
-    <body>
-      <p>ゴーヤの大きさと売った相手の情報は下記になります</p>
-      文字列：#{get}
-    </body>
-  </html>"
-}
+     <body>
+       <p>The size of bitter gourd and the information of the sold people are as follows</p>
+       String: #{get}
+     </body>
+   </html>"
+end
