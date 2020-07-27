@@ -4,18 +4,13 @@
   </head>
   <body>
     <h1> Goya! !! !! !! !! !! !! !! !! !! !! !! !! </h1>
-    <% require'pg' %>
-    <% connection = PG::connect(dbname: "goya") %>
-    <% connection.internal_encoding = "UTF-8" %>
-    <% result = connection.exec("select weight, give_for from crops;") %>
-    <% data = [] %>
-    <% result.each do |record| %>
-      <% data << "Size of bitter gourd: #{record["weight"]} Sold by: #{record["give_for"]}" %>
-    <% end %>
-    <form action="goya.cgi" method="POST">
-       If you press the button below, you will be taken to the information page of the bitter gourd and the person who sold it.<br><br>
-      <input type="text" name="goya" value="<%= data.join('') %>">
-      <input type="submit" name="Send">
+    <form action="show.cgi" method="POST">
+       If you press the Show button below, you will be taken to the goya information page in pretty format.<br><br>
+      <input type="submit" name="show" value="Show">
+    </form>
+    <form action="false.cgi" method="POST">
+       If you press the False button below, you will be taken to the goya information page in poor quality.<br><br>
+      <input type="submit" name="false" value="False">
     </form>
   </body>
 </html>
