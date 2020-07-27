@@ -1,16 +1,34 @@
 <html>
   <head>
+  <style>
+  .btn {
+    border: none;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+  }
+  .btn:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  #show {
+    background : 	#2E8B57;
+  }
+  #false {
+    background: #DC143C;
+  }
+  </style>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   </head>
   <body>
     <h1> Goya! !! !! !! !! !! !! !! !! !! !! !! !! </h1>
     <form action="show.cgi" method="POST">
        If you press the Show button below, you will be taken to the goya information page in pretty format.<br><br>
-      <input type="submit" name="show" value="Show">
+      <input type="submit" name="show" value="Show" id="show" class="btn">
     </form>
     <form action="false.cgi" method="POST">
        If you press the False button below, you will be taken to the goya information page in poor quality.<br><br>
-      <input type="submit" name="false" value="False">
+      <input type="submit" name="false" value="False" id="false" class="btn">
     </form>
   </body>
 </html>
